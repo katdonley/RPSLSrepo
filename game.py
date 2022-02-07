@@ -30,7 +30,8 @@ class Game:
 
 
     def show_human_option(self):
-        pass
+        print(self.list_of_gestures)
+        self.chose_gesture = input("Enter the number of the move you wish to make: ")
     
     def display_winner(self):
         pass
