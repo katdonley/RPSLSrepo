@@ -6,5 +6,5 @@ class Human(Player):
         super().__init__()
 
     def attack(self):
-
+        pass
         
