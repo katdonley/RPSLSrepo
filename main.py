@@ -1,5 +1,3 @@
-#Hello!
-
-#will it let me commit now?
-def __init__():
-    pass
+from game import Game
+game = Game()
+game.run_game()
