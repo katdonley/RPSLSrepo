@@ -13,10 +13,12 @@ class Game:
     def run_game(self):
         self.choose_players()
         self.display_rules()
-        self.play_round() #while loop
-       
-    
-        pass
+        while self.player_one.wins <= 2 or self.player_two.wins <= 2:
+            self.play_round()
+            self.display_current_standing() 
+            self.display_winner()
+        
+        
 
     def display_rules(self):
         print(''' 
@@ -51,6 +53,7 @@ class Game:
         print("Starting new round")
         self.player_one.attack()
         self.player_two.attack()
+        
         if self.player_one.chosen_gesture == self.player_two.chosen_gesture:
             print("its a tie")
         elif self.player_one.chosen_gesture == "Rock" and self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard":
@@ -79,7 +82,10 @@ class Game:
         
     
     def display_winner(self):
-        pass
+        if self.player_one.wins == 2:
+            print("Player one won the game!")
+        elif self.player_two.wins == 2:
+            print("Player two won the game!")
 
 
 
