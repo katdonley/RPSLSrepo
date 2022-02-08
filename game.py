@@ -8,17 +8,21 @@ class Game:
         self.player_one = None
         self.player_two = Human()
         
-
+        
 
     def run_game(self):
         self.choose_players()
         self.display_rules()
-        while self.player_one.wins <= 2 or self.player_two.wins <= 2:
+        games_won = False
+        while games_won == False:
+            self.player_one.wins < 2 or self.player_two.wins < 2
             self.play_round()
-            self.display_current_standing() 
-            self.display_winner()
+            self.display_current_standing()
+            if self.player_one.wins == 2 or self.player_two.wins == 2:
+                games_won == True
+                self.display_winner()
         
-        
+    
 
     def display_rules(self):
         print(''' 
