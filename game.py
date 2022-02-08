@@ -7,18 +7,25 @@ class Game:
     def __init__(self):
         self.player_one = None
         self.player_two = Human()
-        self.list_of_gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+        
 
 
     def run_game(self):
-        self.choose_player()
+        self.choose_players()
+        self.display_rules()
+        self.play_round() #while loop
+       
+    
         pass
 
     def display_rules(self):
-        self.list_of_gestures[0] > self.list_of_gestures[2] and self.list_of_gestures[3]
-        if self.player_one_turn == self.list_of_gestures[0]:
-            self.player_one_turn = "win"
-            print(self.player_one_turn)
+        print('The rules are as follows: ')
+        print(''' 
+        test
+        still test
+        more test 
+        last test
+        ''')
 
 
 
@@ -30,16 +37,21 @@ class Game:
             self.player_one = Human()
 
 
-    def player_one_turn(self):
-        pass
-
-    def player_two_turn(self):
-        pass
-
-
-    def show_human_option(self):
-        print(self.list_of_gestures[0])
-        self.chose_gesture = input("Enter the number of the move you wish to make: ")
+    def play_round(self):
+        print("Starting new round")
+        self.player_one.attack()
+        self.player_two.attack()
+        if self.player_one.chosen_gesture == self.player_two.chosen_gesture:
+            print("its a tie")
+        elif self.player_one.chosen_gesture == "Rock" and self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard":
+            print("Player one wins")
+            self.player_one.wins += 1
+            self.display_current_standing()
+            
+    def display_current_standing(self):
+        print(f'{self.player_one.name} has {self.player_one.wins} wins')
+        print(f'{self.player_two.name} has {self.player_two.wins} wins')
+        
     
     def display_winner(self):
         pass
