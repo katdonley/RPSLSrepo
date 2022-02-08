@@ -51,6 +51,8 @@ class Game:
             self.player_one = Ai()
         elif user_choice == "2":
             self.player_one = Human()
+        else:
+            print("please enter a valid response")
 
 
     def play_round(self):
