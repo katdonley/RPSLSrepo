@@ -13,12 +13,10 @@ class Game:
     def run_game(self):
         self.choose_players()
         self.display_rules()
-        # games_won = False
         while self.player_one.wins < 2 and self.player_two.wins < 2:
             self.play_round()
             self.display_current_standing()
             if self.player_one.wins == 2 or self.player_two.wins == 2:
-                # games_won = True
                 self.display_winner()
         
     
@@ -45,13 +43,18 @@ class Game:
 
 
     def choose_players(self):
-        user_choice = input("would you like 1 or 2 human players")
-        if user_choice == "1":
-            self.player_one = Ai()
-        elif user_choice == "2":
-            self.player_one = Human()
-        else:
-            print("please enter a valid response")
+        valid = False
+        while valid == False:
+            user_choice = input("would you like 1 or 2 human players")
+            if user_choice == "1":
+                valid = True
+                self.player_one = Ai()
+            elif user_choice == "2":
+                valid = True
+                self.player_one = Human()
+            else:
+                print("please enter a valid response")
+
 
 
     def play_round(self):
