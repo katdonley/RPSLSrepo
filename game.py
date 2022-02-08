@@ -13,13 +13,12 @@ class Game:
     def run_game(self):
         self.choose_players()
         self.display_rules()
-        games_won = False
-        while games_won == False:
-            self.player_one.wins < 2 or self.player_two.wins < 2
+        # games_won = False
+        while self.player_one.wins < 2 and self.player_two.wins < 2:
             self.play_round()
             self.display_current_standing()
             if self.player_one.wins == 2 or self.player_two.wins == 2:
-                games_won == True
+                # games_won = True
                 self.display_winner()
         
     
@@ -91,15 +90,3 @@ class Game:
         elif self.player_two.wins == 2:
             print("Player two won the game!")
 
-
-
-#Rock crushes Scissors 
-# Scissors cuts Paper 
-# Paper covers Rock 
-# Rock crushes Lizard 
-# Lizard poisons Spock 
-# Spock smashes Scissors 
-# Scissors decapitates Lizard
-#Lizard eats Paper 
-# Paper disproves Spock 
-# Spock vaporizes Rock
