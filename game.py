@@ -46,6 +46,21 @@ class Game:
         elif self.player_one.chosen_gesture == "Rock" and self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard":
             print("Player one wins")
             self.player_one.wins += 1
+        elif self.player_one.chosen_gesture == "Paper" and self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock":
+            print("Player one wins")
+            self.player_one.wins += 1
+        elif self.player_one.chosen_gesture == "Scissors" and self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard":
+            print("Player one wins")
+            self.player_one.wins += 1
+        elif self.player_one.chosen_gesture == "Lizard" and self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Spock":
+            print("Player one wins")
+            self.player_one.wins += 1
+        elif self.player_one.chosen_gesture == "Spock" and self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors":
+            print("Player one wins")
+            self.player_one.wins += 1
+        else:
+            self.player_two.wins += 1
+            print("Player two wins")
             self.display_current_standing()
             
     def display_current_standing(self):
@@ -58,3 +73,13 @@ class Game:
 
 
 
+#Rock crushes Scissors 
+# Scissors cuts Paper 
+# Paper covers Rock 
+# Rock crushes Lizard 
+# Lizard poisons Spock 
+# Spock smashes Scissors 
+# Scissors decapitates Lizard
+#Lizard eats Paper 
+# Paper disproves Spock 
+# Spock vaporizes Rock
