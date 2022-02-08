@@ -19,12 +19,22 @@ class Game:
         pass
 
     def display_rules(self):
-        print('The rules are as follows: ')
         print(''' 
-        test
-        still test
-        more test 
-        last test
+        The rules are as follows:
+        ****************************
+        
+        Rock curshes Scissors
+        Scissors covers Rock
+        Rock crushed Lizard 
+        Lizard poisons Spock
+        Spock smashes Scissors
+        Scissors decapitates Lizard
+        Lizard eats Paper
+        Paper disproves Spock
+        Spock vaporizes Rock
+
+        Let the game BEGIN!!!
+        **********************
         ''')
 
 
