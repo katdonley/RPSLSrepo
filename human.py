@@ -6,18 +6,15 @@ class Human(Player):
         self.set_name()
 
     def attack(self):
-        valid = False
+        valid = ("0","1","2","3","4") 
         counter = 0
         for gesture in self.list_of_gestures:
             print(f'Press {counter} to select {gesture}')
             counter += 1
-        while valid == False:
-            user_choice = int(input("Enter the number of the move you wish to make: "))
-            if user_choice <= 4 and user_choice >= 0:
-                valid = True
-            else:
-                print("please enter a valid reponse")
-        self.chosen_gesture = self.list_of_gestures[user_choice]
+        user_choice = input("Enter the number of the move you wish to make: ")
+        while user_choice not in valid:
+            user_choice = input("invalid input, try again")
+        self.chosen_gesture = self.list_of_gestures[int(user_choice)]
         print(f'{self.chosen_gesture} picked by human')
 
     def set_name(self):
